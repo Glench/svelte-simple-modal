@@ -96,7 +96,10 @@
 
   const toVoid = () => {};
   let onOpen = toVoid;
-  let onClose = toVoid;
+  let on
+  
+  
+  toVoid;
   let onOpened = toVoid;
   let onClosed = toVoid;
 
@@ -131,6 +134,7 @@
   };
 
   const close = (callback = {}) => {
+    if (callback.preventDefault) callback.preventDefault();
     onClose = callback.onClose || onClose;
     onClosed = callback.onClosed || onClosed;
     Component = null;
